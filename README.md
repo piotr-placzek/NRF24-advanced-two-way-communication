@@ -21,8 +21,11 @@ Each frame is divided into three basic blocks:
 Address of the slave device: 0x11.
 The slave device sends two bytes of data with the value 0xFF in response.
 > MASTER -> SLAVE [0xA5 0x5A 0x10 0xED]
+
 > MASTER <- SLAVE *nothing*
+
 > MASTER -> SLAVE [0xA5 0x5A 0x11 0xED]
+
 > MASTER <- SLAVE [0xA5 0x5A 0x11 0x02 0xFF 0xFF 0xED]
 
 ## Sketch initialization
@@ -37,10 +40,17 @@ The slave device sends two bytes of data with the value 0xFF in response.
 
 ## Wiring
 NRF24 pin 01 <-> GND
+
 NRF24 pin 02 <-> VCC (max 3.3V)
+
 NRF24 pin 03 <-> ARDUINO UNO pin 10 (chip enable)
+
 NRF24 pin 04 <-> ARDUINO UNO pin 09 (chip select)
+
 NRF24 pin 05 <-> ARDUINO UNO pin 13 (SPI SCK)
+
 NRF24 pin 06 <-> ARDUINO UNO pin 11 (SPI MOSI)
+
 NRF24 pin 07 <-> ARDUINO UNO pin 12 (SPI MISO)
+
 NRF24 pin 08 <-> N/U (IRQ)
